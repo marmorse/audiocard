@@ -21,7 +21,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": ">=16.8",
+    "react": ">=17.0",
     "styled-components": ">=4"
   },
   "scripts": {
