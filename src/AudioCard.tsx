@@ -4,7 +4,7 @@ import { Play, Pause, SkipBack, SkipForward } from './controls'
 import { ProgressBar, Time } from './components'
 import { useAudioPlayer } from './hooks/useAudioPlayer'
 import { preventDefault } from './util'
-import useDimensions from 'react-use-dimensions'
+import useDimensions from 'use-element-dimensions'
 
 export interface AudioCardProps {
   /** Optional artwork for the song or podcast episode */
