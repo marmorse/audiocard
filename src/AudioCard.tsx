@@ -64,7 +64,8 @@ export interface AudioCardProps {
   source: string
   /** Optional title of the song or podcast episode */
   title?: string
-  onPlayIt?: (event: React.MouseEvent<HTMLDivElement>) => void
+  /** Optional function when play is clicked. */
+  onPlayIt?: () => void
 }
 
 const canonicalWidth = 750
@@ -86,7 +87,7 @@ export function AudioCard({
   skipForwardSeconds,
   source,
   title,
-  onPlayIt
+  onPlayIt = () => {}
 }: AudioCardProps) {
   const {
     playerRef,
@@ -103,6 +104,7 @@ export function AudioCard({
   const height = width / aspectRatio
   const h = (value: number) => (value * height) / canonicalHeight
   const w = (value: number) => (value * width) / canonicalWidth
+
   return (
     <Container
       className={className}
@@ -117,6 +119,7 @@ export function AudioCard({
         style={{ display: 'none' }}
         preload={preload}
         autoPlay={autoPlay}
+        onPlay={onPlayIt}
       />
       {art && (
         <Art
@@ -146,12 +149,7 @@ export function AudioCard({
             </Control>
           )}
           {!playing && (
-            <Control
-              onClick={() => {
-                play
-                onPlayIt
-              }}
-            >
+            <Control onClick={play}>
               <Play />
             </Control>
           )}
