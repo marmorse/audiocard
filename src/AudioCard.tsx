@@ -65,7 +65,7 @@ export interface AudioCardProps {
   /** Optional title of the song or podcast episode */
   title?: string
   /** Optional function when play is clicked. */
-  onPlayIt(): void
+  playHook(): void
 }
 
 const canonicalWidth = 750
@@ -87,7 +87,7 @@ export function AudioCard({
   skipForwardSeconds,
   source,
   title,
-  onPlayIt
+  playHook
 }: AudioCardProps) {
   const {
     playerRef,
@@ -150,7 +150,7 @@ export function AudioCard({
           {!playing && (
             <Control
               onClick={() => {
-                onPlayIt
+                playHook
                 play
               }}
             >
