@@ -94,7 +94,7 @@ export function AudioCard({
     playing,
     time,
     duration,
-    play,
+
     pause,
     seek,
     skipForward,
@@ -148,12 +148,7 @@ export function AudioCard({
             </Control>
           )}
           {!playing && (
-            <Control
-              onClick={() => {
-                play
-                onPlayIt
-              }}
-            >
+            <Control onClick={onPlayIt}>
               <Play />
             </Control>
           )}
