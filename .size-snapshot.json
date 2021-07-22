@@ -1,35 +1,35 @@
 {
   "./dist/audiocard.umd.production.js": {
-    "bundled": 22673,
-    "minified": 11426,
-    "gzipped": 3337
+    "bundled": 26615,
+    "minified": 13110,
+    "gzipped": 3989
   },
   "./dist/audiocard.umd.development.js": {
-    "bundled": 22673,
-    "minified": 11426,
-    "gzipped": 3337
+    "bundled": 26615,
+    "minified": 13110,
+    "gzipped": 3989
   },
   "./dist/audiocard.cjs.production.js": {
-    "bundled": 16953,
-    "minified": 12663,
-    "gzipped": 3044
+    "bundled": 16920,
+    "minified": 12622,
+    "gzipped": 3045
   },
   "./dist/audiocard.cjs.development.js": {
-    "bundled": 16953,
-    "minified": 12663,
-    "gzipped": 3044
+    "bundled": 16920,
+    "minified": 12622,
+    "gzipped": 3045
   },
   "dist/audiocard.esm.js": {
-    "bundled": 16695,
-    "minified": 12094,
-    "gzipped": 2983,
+    "bundled": 16680,
+    "minified": 12097,
+    "gzipped": 2986,
     "treeshaked": {
       "rollup": {
-        "code": 83,
-        "import_statements": 83
+        "code": 84,
+        "import_statements": 84
       },
       "webpack": {
-        "code": 5566
+        "code": 5567
       }
     }
   }
