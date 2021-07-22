@@ -65,7 +65,7 @@ export interface AudioCardProps {
   /** Optional title of the song or podcast episode */
   title?: string
   /** Optional function when play is clicked. */
-  onPlayIt?: () => void
+  onPlayIt(): void
 }
 
 const canonicalWidth = 750
