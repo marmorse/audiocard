@@ -119,7 +119,6 @@ export function AudioCard({
         style={{ display: 'none' }}
         preload={preload}
         autoPlay={autoPlay}
-        onPlay={onPlayIt}
       />
       {art && (
         <Art
@@ -149,7 +148,12 @@ export function AudioCard({
             </Control>
           )}
           {!playing && (
-            <Control onClick={play}>
+            <Control
+              onClick={() => {
+                play
+                onPlayIt
+              }}
+            >
               <Play />
             </Control>
           )}
