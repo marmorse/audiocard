@@ -87,7 +87,7 @@ export function AudioCard({
   skipForwardSeconds,
   source,
   title,
-  onPlayIt = () => {}
+  onPlayIt
 }: AudioCardProps) {
   const {
     playerRef,
