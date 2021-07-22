@@ -64,6 +64,7 @@ export interface AudioCardProps {
   source: string
   /** Optional title of the song or podcast episode */
   title?: string
+  onPlayIt?: (event: React.MouseEvent<HTMLDivElement>) => void
 }
 
 const canonicalWidth = 750
@@ -84,7 +85,8 @@ export function AudioCard({
   skipBackSeconds,
   skipForwardSeconds,
   source,
-  title
+  title,
+  onPlayIt
 }: AudioCardProps) {
   const {
     playerRef,
@@ -144,7 +146,12 @@ export function AudioCard({
             </Control>
           )}
           {!playing && (
-            <Control onClick={play}>
+            <Control
+              onClick={() => {
+                play
+                onPlayIt
+              }}
+            >
               <Play />
             </Control>
           )}
