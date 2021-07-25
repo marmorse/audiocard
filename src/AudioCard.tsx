@@ -30,6 +30,13 @@ export interface AudioCardProps {
    * you include both link and linkText.
    **/
 
+  largeControl?: boolean
+
+  /**
+   * Optional url for a hyperlink to be rendered. Will only render if
+   * you include both link and linkText.
+   **/
+
   link?: string
   /**
    * Optional text for a hyperlink to be rendered. Will only render if
@@ -83,8 +90,8 @@ export function AudioCard({
   background,
   className,
   color = '#666',
-
   hideProgress,
+  largeControl = false,
   link,
   linkText,
   preload = 'none',
@@ -154,20 +161,42 @@ export function AudioCard({
               <SkipBack seconds={skipBackSeconds} />
             </Control>
           )}
-          {!playing && (
-            <Control
-              onClick={event => {
-                playHook()
-                play(event)
-              }}
-            >
-              <Play />
-            </Control>
-          )}
-          {playing && (
-            <Control onClick={pause}>
-              <Pause />
-            </Control>
+          {largeControl ? (
+            <React.Fragment>
+              {!playing && (
+                <LargeControl
+                  onClick={event => {
+                    playHook()
+                    play(event)
+                  }}
+                >
+                  <Play />
+                </LargeControl>
+              )}
+              {playing && (
+                <LargeControl onClick={pause}>
+                  <Pause />
+                </LargeControl>
+              )}{' '}
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              {!playing && (
+                <Control
+                  onClick={event => {
+                    playHook()
+                    play(event)
+                  }}
+                >
+                  <Play />
+                </Control>
+              )}
+              {playing && (
+                <Control onClick={pause}>
+                  <Pause />
+                </Control>
+              )}
+            </React.Fragment>
           )}
           {skipForwardSeconds === undefined ? (
             <Control as="div" />
@@ -260,7 +289,15 @@ const Control = styled.a.attrs({ href: '#' })`
   flex-flow: column nowrap;
   justify-content: center;
   margin: 5px;
-  width: 100%;
+  width: 15%;
+`
+const LargeControl = styled.a.attrs({ href: '#' })`
+  text-decoration: none;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 5px;
+  width: 90%;
 `
 
 const Art = styled.img``
