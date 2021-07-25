@@ -152,9 +152,9 @@ export function AudioCard({
           )}
           {!playing && (
             <Control
-              onClick={() => {
+              onClick={event => {
                 playHook()
-                play
+                play(event)
               }}
             >
               <Play />
