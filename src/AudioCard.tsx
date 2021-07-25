@@ -296,7 +296,7 @@ const LargeControl = styled.a.attrs({ href: '#' })`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  margin: 5px;
+
   width: 90%;
 `
 
