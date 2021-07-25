@@ -184,17 +184,19 @@ export function AudioCard({
           <Time value={time} />
           <Time value={duration} />
         </Times>
-        {hideProgress ? (
-          <ProgressBar
-            value={time}
-            total={duration}
-            color={color}
-            background={progressBarBackground}
-            completeBackground={progressBarCompleteBackground}
-            seek={seek}
-            size={h(20)}
-          />
-        ) : null}
+        {hideProgress ? null : (
+          <React.Fragment>
+            <ProgressBar
+              value={time}
+              total={duration}
+              color={color}
+              background={progressBarBackground}
+              completeBackground={progressBarCompleteBackground}
+              seek={seek}
+              size={h(20)}
+            />
+          </React.Fragment>
+        )}
       </Content>
     </Container>
   )
