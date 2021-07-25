@@ -10,12 +10,12 @@
     "gzipped": 4013
   },
   "./dist/audiocard.cjs.production.js": {
-    "bundled": 17065,
+    "bundled": 17051,
     "minified": 12664,
     "gzipped": 3064
   },
   "./dist/audiocard.cjs.development.js": {
-    "bundled": 17065,
+    "bundled": 17051,
     "minified": 12664,
     "gzipped": 3064
   },
