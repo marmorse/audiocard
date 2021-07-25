@@ -21,12 +21,13 @@ export interface AudioCardProps {
    * @default '#666'
    **/
   color?: string
+  /** Whether or not hide the progress bar */
+  hideProgress?: boolean
   /**
    * Optional url for a hyperlink to be rendered. Will only render if
    * you include both link and linkText.
    **/
-  /** Whether or not hide the progress bar */
-  hideProgress?: boolean
+
   link?: string
   /**
    * Optional text for a hyperlink to be rendered. Will only render if
@@ -180,12 +181,13 @@ export function AudioCard({
             {linkText}
           </Link>
         )}
-        <Times style={{ fontSize: h(16) }}>
-          <Time value={time} />
-          <Time value={duration} />
-        </Times>
         {hideProgress ? null : (
           <React.Fragment>
+            <Times style={{ fontSize: h(16) }}>
+              <Time value={time} />
+              <Time value={duration} />
+            </Times>
+
             <ProgressBar
               value={time}
               total={duration}
