@@ -21,8 +21,7 @@ export interface AudioCardProps {
    * @default '#666'
    **/
   color?: string
-  /** Optional class name to apply to the resulting container element */
-  controlWidth?: number
+
   /** Whether or not hide the progress bar */
 
   hideProgress?: boolean
@@ -84,7 +83,7 @@ export function AudioCard({
   background,
   className,
   color = '#666',
-  controlWidth = 15,
+
   hideProgress,
   link,
   linkText,
@@ -174,7 +173,6 @@ export function AudioCard({
             <Control as="div" />
           ) : (
             <Control
-              style={{ width: controlWidth }}
               onClick={preventDefault(() => skipForward(skipForwardSeconds))}
             >
               <SkipForward seconds={skipForwardSeconds} />
@@ -212,6 +210,8 @@ export function AudioCard({
 interface ContainerProps {
   background?: string
   color: string
+  /** Optional class name to apply to the resulting container element */
+  width?: number
 }
 const Container = styled.div<ContainerProps>`
   width: 100%;
@@ -260,7 +260,7 @@ const Control = styled.a.attrs({ href: '#' })`
   flex-flow: column nowrap;
   justify-content: center;
   margin: 5px;
-  width: 15%;
+  width: 100%;
 `
 
 const Art = styled.img``
