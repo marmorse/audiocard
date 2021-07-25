@@ -25,6 +25,8 @@ export interface AudioCardProps {
    * Optional url for a hyperlink to be rendered. Will only render if
    * you include both link and linkText.
    **/
+  /** Whether or not hide the progress bar */
+  hideProgress?: boolean
   link?: string
   /**
    * Optional text for a hyperlink to be rendered. Will only render if
@@ -78,6 +80,7 @@ export function AudioCard({
   background,
   className,
   color = '#666',
+  hideProgress,
   link,
   linkText,
   preload = 'none',
@@ -149,9 +152,9 @@ export function AudioCard({
           )}
           {!playing && (
             <Control
-              onClick={event => {
+              onClick={() => {
                 playHook()
-                play(event)
+                play
               }}
             >
               <Play />
@@ -181,15 +184,17 @@ export function AudioCard({
           <Time value={time} />
           <Time value={duration} />
         </Times>
-        <ProgressBar
-          value={time}
-          total={duration}
-          color={color}
-          background={progressBarBackground}
-          completeBackground={progressBarCompleteBackground}
-          seek={seek}
-          size={h(20)}
-        />
+        {hideProgress ? (
+          <ProgressBar
+            value={time}
+            total={duration}
+            color={color}
+            background={progressBarBackground}
+            completeBackground={progressBarCompleteBackground}
+            seek={seek}
+            size={h(20)}
+          />
+        ) : null}
       </Content>
     </Container>
   )
