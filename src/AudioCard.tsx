@@ -21,7 +21,10 @@ export interface AudioCardProps {
    * @default '#666'
    **/
   color?: string
+  /** Optional class name to apply to the resulting container element */
+  controlWidth?: number
   /** Whether or not hide the progress bar */
+
   hideProgress?: boolean
   /**
    * Optional url for a hyperlink to be rendered. Will only render if
@@ -81,6 +84,7 @@ export function AudioCard({
   background,
   className,
   color = '#666',
+  controlWidth = 15,
   hideProgress,
   link,
   linkText,
@@ -170,6 +174,7 @@ export function AudioCard({
             <Control as="div" />
           ) : (
             <Control
+              style={{ width: controlWidth }}
               onClick={preventDefault(() => skipForward(skipForwardSeconds))}
             >
               <SkipForward seconds={skipForwardSeconds} />
