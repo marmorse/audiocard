@@ -21,7 +21,12 @@ export interface AudioCardProps {
    * @default '#666'
    **/
   color?: string
+  /**
+   * Optional url for a hyperlink to be rendered. Will only render if
+   * you include both link and linkText.
+   **/
 
+  fontAwesome?: boolean
   /** Whether or not hide the progress bar */
 
   hideProgress?: boolean
@@ -90,6 +95,7 @@ export function AudioCard({
   background,
   className,
   color = '#666',
+  fontAwesome = false,
   hideProgress,
   largeControl = false,
   link,
@@ -170,12 +176,20 @@ export function AudioCard({
                     play(event)
                   }}
                 >
-                  <Play />
+                  {fontAwesome ? (
+                    <i className="fa fa-play" aria-hidden="true" />
+                  ) : (
+                    <Play />
+                  )}
                 </LargeControl>
               )}
               {playing && (
                 <LargeControl onClick={pause}>
-                  <Pause />
+                  {fontAwesome ? (
+                    <i className="fa fa-pause" aria-hidden="true" />
+                  ) : (
+                    <Pause />
+                  )}
                 </LargeControl>
               )}{' '}
             </React.Fragment>
