@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useListeners } from './useListeners'
 import { preventDefault } from '../util'
 
-export function useAudioPlayer() {
+export function useAudioPlayer(audioHook) {
   const [playing, setPlaying] = React.useState(false)
   const [duration, setDuration] = React.useState<number | void>()
   const [time, setTime] = React.useState(0)

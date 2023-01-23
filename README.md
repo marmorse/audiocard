@@ -1,5 +1,7 @@
 # ⏯️ AudioCard
 
+Modifications to test if adding some hooks will help out.  If this is successful, I'll likely contribute back to the original (https://erikras.github.io/audiocard/).  If not, this will be deleted. 
+
 ⏯️ AudioCard is an opinionated, responsive, audio player for React, designed to be compatible with [Twitter Player Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/player-card.html).
 
 ![Screenshot](screenshot.jpg)
