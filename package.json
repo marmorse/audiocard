@@ -1,7 +1,7 @@
 {
   "name": "audiocard",
   "description": "Opinionated, responsive, audio player compatible with Twitter Cards updated from erikras/audiocard for my purposes",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "Erik Rasmussen <rasmussenerik@gmail.com>",
   "repository": "erikras/audiocard",
@@ -21,7 +21,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": ">=17.0.2",
+    "react": ">=18.2.0",
     "react-cool-dimensions": ">=2.0.7",
     "styled-components": ">=5.3.0"
   },
@@ -58,9 +58,9 @@
     "lint-staged": "8.1.5",
     "prettier": "1.16.4",
     "raw-loader": "^0.5.1",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-docgen-typescript-loader": "^3.7.2",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-testing-library": "^8.0.1",
     "rimraf": "^2.6.2",
     "rollup": "^1.1.2",
