@@ -4,7 +4,6 @@ import { Play, Pause, SkipBack, SkipForward } from './controls'
 import { ProgressBar, Time } from './components'
 import { useAudioPlayer } from './hooks/useAudioPlayer'
 import { preventDefault } from './util'
-import useDimensions from 'react-cool-dimensions'
 
 export interface AudioCardProps {
   /** Optional artwork for the song or podcast episode */
@@ -120,7 +119,7 @@ export function AudioCard({
     skipForward,
     skipBack
   } = useAudioPlayer()
-  const { observe, width } = useDimensions()
+  const width = 750
   const height = width / aspectRatio
   const h = (value: number) => (value * height) / canonicalHeight
   const w = (value: number) => (value * width) / canonicalWidth
@@ -128,7 +127,6 @@ export function AudioCard({
   return (
     <Container
       className={className}
-      ref={observe}
       background={background}
       color={color}
       style={{ height }}

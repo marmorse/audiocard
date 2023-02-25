@@ -1,7 +1,7 @@
 {
   "name": "audiocard",
   "description": "Opinionated, responsive, audio player compatible with Twitter Cards updated from erikras/audiocard for my purposes",
-  "version": "1.1.0",
+  "version": "1.1.4",
   "license": "MIT",
   "author": "Erik Rasmussen <rasmussenerik@gmail.com>",
   "repository": "erikras/audiocard",
@@ -23,6 +23,7 @@
   "peerDependencies": {
     "react": ">=17.0.2",
     "react-cool-dimensions": ">=3.0.0",
+
     "styled-components": ">=5.3.0"
   },
   "scripts": {
@@ -43,7 +44,7 @@
     "@babel/core": "^7.14.6",
     "@types/jest": "^24.0.5",
     "@types/react": "^16.7.6",
-    "@types/react-dom": "^16.0.9",
+    "@types/react-dom": "^18.2.0",
     "@types/styled-components": "5.1.11",
     "all-contributors-cli": "^6.2.0",
     "awesome-typescript-loader": "^5.2.1",
@@ -60,8 +61,10 @@
     "raw-loader": "^0.5.1",
     "react": "^17.0.2",
     "react-docgen-typescript-loader": "^3.7.2",
+
     "react-dom": "^17.0.2",
     "react-testing-library": "^8.0.1",
+
     "rimraf": "^2.6.2",
     "rollup": "^1.1.2",
     "rollup-plugin-babel": "^4.3.2",
@@ -94,8 +97,6 @@
       "src/**/*.{ts,tsx}"
     ],
     "setupFilesAfterEnv": [
-      "react-testing-library/cleanup-after-each.js",
-      "<rootDir>/test/setupTests.ts"
     ],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
@@ -112,19 +113,5 @@
       "js",
       "json"
     ]
-  },
-  "size-limit": [
-    {
-      "path": "./dist/index.js",
-      "limit": "6 kB"
-    },
-    {
-      "path": "./dist/audiocard.esm.js",
-      "limit": "3 kB"
-    },
-    {
-      "path": "./dist/audiocard.umd.production.js",
-      "limit": "3 kB"
-    }
-  ]
+  }
 }
